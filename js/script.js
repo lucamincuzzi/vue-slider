@@ -34,6 +34,9 @@ createApp({
     }
   },
   methods: {
+    actiClick: function(index) {
+      this.activeSlideIndex = index;
+    },
     prevSlide: function() {
       if(this.activeSlideIndex === 0) {
         this.activeSlideIndex = this.slides.length - 1;
