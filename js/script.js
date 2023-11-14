@@ -33,7 +33,17 @@ createApp({
     activeSlideIndex: 0
     }
   },
+  created() {
+    const autoScroll = setInterval(this.scrollForward, 3000)
+  },
   methods: {
+    scrollForward: function() {
+      if(this.activeSlideIndex === this.slides.length - 1) {
+        this.activeSlideIndex = 0;
+    } else {
+        this.activeSlideIndex++;
+    }
+    },
     actiClick: function(index) {
       this.activeSlideIndex = index;
     },
